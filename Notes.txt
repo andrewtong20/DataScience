@@ -1,0 +1,248 @@
+In general in Terminal:
+
+git clone url to clone a repo
+mkdir to create a folder
+ls to look for stuff
+cd to change directory
+jupyter notebook to open it
+
+--------------------------------
+Chapter 1: iPython- interactive control panel
+type "ipython" to launch
+? for help on a certain function (len?)
+?? for finding source code
+<tab> completion
+
+Shortcuts:
+ctrl A- move cursor to beginning
+E- to end
+D- delete next character
+K- cut text from cursor to end
+U- cut text from beginning to cursor
+Y- paste cut text
+t- switch previous two characters
+Up arrow- previous command in history
+Down array- next command in history
+ctrl r- reverse search through history
+
+ctrl-l clear terminal screen
+ctrl- interrupt current python command (important to stop)
+ctrl-d exit ipython session
+
+Pasting code blocks:
+%paste, %cpaste (multiline)
+
+%run- run in ipython session
+
+Accessing previous output: print(_) prints previous thing, number of underscores highlights which command to print
+
+Add semicolon to end suppresses output
+
+Debugging:
+list- show current location
+h- help list of commands
+quit
+continue
+next
+
+%timeit, and %time to find the amount of time it takes to run
+
+--------------------------------
+Chapter 2: intro to NumPy
+
+All data ca be represented as numbers such as in arrays
+In python, types are dynamically inferred
+Python integers are actually pointers that contained the object info
+
+Flexibility in lists (different types) is because each item is a complete Python object
+- fixed type arrays are faster than dynamic type lists
+These are NumPy arrays (np.array)
+
+Examples include: (np.zeros(10, dtype=int) for length 10 or replace that with (3, 5)
+for multidimensional arrays
+Specify a number by np.full((3,5), 3.14)
+
+Step size matters, (0,20,2) for a step size of 2
+
+
+- NumPy is built in C
+
+
+NumPy Array Attributes:
+- ndim (dimension)
+- shape (size of each dimension)
+- size (total size of array)
+- type: data type of array
+array[index] to access value at the index
+
+python subarrays
+array[start:stope:step], default, 0, size of dimension, 1
+- multidimensional subarrays are the same with commas between
+
+- reshape method
+- concatenate method, split method
+
+Computation/Universal Functions: 
+- funds
+- default dynamic python can be slow
+- unary and binary ufuncs
+standard arithmetic are ufuncs as well as ** for exponentiation and % for modulus
+- absolute value and trig as well
+
+
+Aggregations: Min, max, etc.
+- summing in array (sum function)
+- min and max function (in an array)'
+
+Broadcasting: to make arithmetic work when arrays aren't the same dimension
+
+Booleans:
+- comparison operators are also ufuncs
+
+Fancy indexing to access parts of an array (modify index array)
+
+Sorting arrays: 
+- np.sort and np.argsort
+- side note: all of these functions have np in front to differentiate from python
+- np is import numpy as np
+- np.partition for partial sorts
+
+
+Big O Notation: how number of operations required for algorithm scales as input grows in size
+
+Structured arrays: have a specific data type
+
+
+Using Jupyter notebooks:
+- pip install -r requirements.txt
+- Ctrl- Enter to run
+
+---------------------------
+Ch 3: Using Pandas (built on top of NumPy)
+
+
+1) Pandas Objects
+
+Series, DataFrame, Index Objects
+
+series:
+- one dimensional array of indexed data
+- explicitly defined index
+- specialized of Python dictionary
+- constructing object:
+pd.Series(data, index=index)
+
+
+dataFrame:
+- two dimensional array of indexed data
+
+index:
+- unlike series or dataFrame, not explicit index
+- immutable array
+
+2) Data Indexing and Selection
+
+Data Selection in series:
+- indexing (e.g., arr[2, 1]), slicing (e.g., arr[:, 1:5]), masking (e.g., arr[arr > 0]), fancy indexing (e.g., arr[0, [1, 5]]), and combinations thereof (e.g., arr[:, [1, 5]])
+
+Data Selection in Data Frame
+- same methods in series but for two dimensional arrays
+
+3) operating on data in Pandas
+
+Ufuncs: index preservation
+
+Ufuncs: index alignment
+
+index alignment in DataFrame
+
+Ufuncs: Operations between dataFrame and series
+
+4) missing data
+
+can handle both NaN and None
+
+can also detect null values
+
+5) hierarchal indexing
+
+multiIndex
+- pass them into constructor
+
+rearranging/slicing multiIndex possible
+
+6) Combining datasets: Concat and Apend
+
+Concatenation of series and data objects
+
+append method
+
+7)Combining datasets: merge and join
+
+manipulating regional data: relational algebra
+
+Merge key words
+
+8) Aggregation and Grouping
+
+sum(), mean(), median(), min(), max()
+
+9) pivot tables
+
+multidimensional version of GroupBy aggregation
+
+organize by different categories
+
+10) working with strings
+
+similar to String methods in Python
+
+- capitalize method, len, split, etc.
+
+11) working with time series
+
+- Time stamps, Time intervals, Time durations
+     -Timestamp type, Period type, time delta type
+
+datetime and dateutil modules
+
+datetime64 allows more efficient arrays
+
+index data by timestamps
+
+shift() shifts the data, tshift() shifts the index
+
+12) High performance Pandas eval() and query()
+
+eval() reduces memory usage in data processing
+- arithmetic operations, comparison operations, 
+
+query() accepts @
+
+in both cases, help with computation time and memory usage
+
+-----------------
+Ch 4: Into to MatPlotLib
+
+- visualization in Python
+
+Importing: 
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+Plotting from a script: plt.show()
+
+Plotting from iPython shell: %matplotlib
+
+Plotting from iPython notebook: 
+- %matplotlib notebook will lead to interactive plots embedded within the notebook
+- %matplotlib inline will lead to static images of your plot embedded in the notebook
+
+1) simple line plots
+
+
+
+
+
+
+
